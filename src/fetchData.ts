@@ -4,6 +4,22 @@
  * @param url - 要取得資料的 URL
  * @returns - 回傳一個 Promise，該 Promise resolve 的值應該是從 URL 取得的資料
  */
+interface ApiResponse {
+    userId: number,
+    id: number,
+    title: string,
+    completed: boolean
+}
 
 // 請在下方寫下你的程式碼
-
+export async function fetchData(url: string):Promise<ApiResponse> {
+    return new Promise(async (resolve, reject) => {
+        try {
+            let responsePromise = fetch(url);
+            let result = await responsePromise;
+            resolve(await result.json() as ApiResponse);
+        } catch (error) {
+            reject(error);
+        }
+    })
+}

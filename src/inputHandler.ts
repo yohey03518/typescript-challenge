@@ -11,6 +11,7 @@
  * 輸出: 'Input is a number: 123'
  */
 
-export function handleInput(input) {
-    // 在此實現函式
+type StringOrNumber = string | number;
+export function handleInput(input: StringOrNumber): string {
+    return `Input is a ${typeof input}: ${input}`;
 }
