@@ -11,6 +11,7 @@
  * 輸入: { brand: 'Toyota', model: 'Corolla', year: 2020 }
  * 輸出: 'Toyota Corolla (2020)'
  */
+
 interface Vehicle {
     brand: string,
     model: string,
