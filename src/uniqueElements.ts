@@ -5,6 +5,11 @@
  * @returns - 回傳包含所有唯一元素的新陣列
  */
 export function uniqueElements(array: number[]): number[] {
-    let set = new Set(array);
-    return Array.from(set);
+    let map: Map<number, number> = new Map();
+    array.forEach((element) => {
+        if (!map.has(element)) {
+            map.set(element, 1);
+        }
+    });
+    return Array.from(map.keys());
 }
