@@ -5,18 +5,6 @@
  * @returns - 回傳包含所有唯一元素的新陣列
  */
 export function uniqueElements(array: number[]): number[] {
-    if (array.length === 0) {
-        return [];
-    }
-    let result: number[] = [];
-    let sortedArray = array.sort();
-    result.push(sortedArray[0]);
-    let lastNum = sortedArray[0];
-    sortedArray.forEach(x => {
-        if (x !== lastNum) {
-            result.push(x);
-            lastNum = x;
-        }
-    })
-    return result;
+    let set = new Set(array);
+    return Array.from(set);
 }
